@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<form id="movie-form">
+    <input id="movie-title" type="text" placeholder="Enter movie title">
+    <label for="movie-rating"> Enter rating for movie(Between 1 and 10)</label>
+    <input id="movie-rating" type="number" min="0" max="10" value="0">
+    <input id="submitbtn" type="submit">
+     
+</form>
+    <ul>
+
+    </ul>
+
+
+    
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+     $(function (){
+$("submitbtn").on("click", function(e){
+$(e).preventDefault();
+let mt = $("#movie-title").val();
+let mr = $("#movie-rating").val();
+$("ul").append("<li> mt + mr </li>");
+$("li").append("<button>");
+$("li button").on("click", function(e){
+    $(e.target).remove();
+});
+});
+});
+</script>
+
+
+</body>
+
+</html>
